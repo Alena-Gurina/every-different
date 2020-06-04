@@ -41,8 +41,8 @@ To perform it, the following tasks were set:
     <li> run RepeatExplorer [1] with Tarean [2] </li>
     <li> repeat steps 4,5 5 times for each sample </li>
     <li> collecting data from Tarean reports using [report_parsing.ipunb] (https://github.com/Alena-Gurina/Potato_repeats/blob/master/scripts/report_parsing.ipynb) </li>
-    <li> creating local database of primitive cultivated potato repeats using BLAST Command line Application [6]
-        ``` makeblastdb -in sequences_repeats.fasta -parse_seqids -blastdb_version 5 -title sequences_repeats -dbtype nucl```
+    <li> creating local database of primitive cultivated potato repeats using BLAST Command line Application [6] <br>
+        `makeblastdb -in sequences_repeats.fasta -parse_seqids -blastdb_version 5 -title sequences_repeats -dbtype nucl` </li>
     
 </ol>
 
