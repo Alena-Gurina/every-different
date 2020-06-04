@@ -28,15 +28,22 @@ To perform it, the following tasks were set:
     - argparse 1.1<br>
     <li> FastQC v0.11.8 [3] </li>
     <li> Preprocession of FASTQ paired-end reads on Galaxy 19.09 [4] </li>
-    <li> NCBI SRA toolkit 2.9.3 [4] </li>
-    <li> BLAST Command line Applications </li>
+    <li> NCBI SRA toolkit 2.9.3 [5] </li>
+    <li> BLAST Command line Applications [6] </li>
 </ol>
 
 #### __Pipeline__
 <ol>
-    <li> Collecting SRA data from NCBI using SRA toolkit [4] </li>
+    <li> Collecting SRA data from NCBI using SRA toolkit [5] </li>
     <li> Checking reads quality using FastQC [3] </li>
-    <li> Preprocessing data on Galaxy server using specific tools (Preprocessing of paired-end reads in FASTQ format including trimming, quality filtering, cutadapt filtering and interlacing. Broken pairs are discarded).
+    <li> Preprocessing data on Galaxy server, including trimming, quality filtering, cutadapt filtering and interlacing. Broken pairs are discarded [4] </li>
+    <li> randomly selecting paired-reads from library using [reads_random_selection.py] (https://github.com/Alena-Gurina/Potato_repeats/blob/master/scripts/reads_random_selection.py) </li>
+    <li> run RepeatExplorer [1] with Tarean [2] </li>
+    <li> repeat steps 4,5 5 times for each sample </li>
+    <li> collecting data from Tarean reports using [report_parsing.ipunb] (https://github.com/Alena-Gurina/Potato_repeats/blob/master/scripts/report_parsing.ipynb) </li>
+    <li> creating local database of primitive cultivated potato repeats using BLAST Command line Application [6]
+        ``` makeblastdb -in sequences_repeats.fasta -parse_seqids -blastdb_version 5 -title sequences_repeats -dbtype nucl```
+    
 </ol>
 
 
